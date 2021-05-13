@@ -1,1 +1,0 @@
-Acceptance Creiteria.md

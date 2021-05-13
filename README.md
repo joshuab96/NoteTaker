@@ -1,22 +1,20 @@
-## Note Taker
+## Note Taker :notebook_with_decorative_cover:
 
-A  Note Taker 
+A  Note Taker that takes in notes with a title and description.
 
 ##### Features
-* Enter a title and text description for that note
-* Save each and every entered notes with a save button
-* Save button to save your inputs and come back to them at a later time
-
-<img src="Assets/Images/WorkDayScheduler.png" alt="Work Day Scheduler Snippet" width="650">
+* Enter a title and text description for each note
+* Save each note with the integrated save button, so your notes will always remain when visiting the page
+* Easily delete unwanted notes with integrated bin button
 
 ##### Technologies
 * HTML
 * CSS
-* JQuery
-* BootStrap
+* Javascript
+* Express Js
 
 ##### Links
 
-[GitHub Repository](https://github.com/joshuab96/Work-Day-Scheduler.git)
-[GitHub Page](https://joshuab96.github.io/Work-Day-Scheduler/)
+[GitHub Repository](https://github.com/joshuab96/NoteTaker.git) |
+[GitHub Page](https://joshuab96.github.io/NoteTaker/)
 
