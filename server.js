@@ -25,12 +25,14 @@ app.get('/notes', (req, res) => res.sendFile(path.join(__dirname, './public/note
 
 
 //API Routes
-app.post('/api/notes', (req, res) => {
+app.post('/api/notes/', (req, res) => {
     console.log("----------------------------POST API NOTES----------------------------------------")
     const newnote = req.body;
+    newnote.id = Date.now();
     console.log(newnote);
-    // res.json(newnote);
+
     //retrieve notes, convert into array using JSONparse
+
     fs.readFile('./db/db.json', 'utf8', (error, data) => {
         error ? console.error(error) : console.log(data)
         var parseData = JSON.parse(data)
@@ -38,6 +40,8 @@ app.post('/api/notes', (req, res) => {
         parseData.push(newnote)
         console.log(parseData);
         var stringData = JSON.stringify(parseData);
+
+        //writes data to file
 
         fs.writeFile("./db/db.json", stringData, (err) => {
             if (err)
@@ -54,17 +58,8 @@ app.post('/api/notes', (req, res) => {
     }
     );
 
-
-
-    //add the note to array using push
-
-
-    //after we add note, convert array back to string to write into file
-
-
 })
 
-//retrieve all data from json file,  when we ret it is string, convert to json obj, add note to array, write into string using json.stringify.
 
 app.get('/api/notes', (req, res) => {  //reads data from db.json file and returns the data to /api/notes
 
@@ -76,9 +71,8 @@ app.get('/api/notes', (req, res) => {  //reads data from db.json file and return
     );
 
 });
-//convert string to javascript object when read. the string is DATA variable.
 
-//Catcher
+//reverts back to homepage if query string does not exist
 app.get('*', (req, res) => res.sendFile(path.join(__dirname, './public/index.html'))); //redirects user if page does not exist 
 
 //listening to server
